@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.domainSection {
+    background-color: rgba(17, 163, 221, 0.1);
+}
+
+.domainSection h1 {
+    text-align: center;
+    font-size: 64px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.cardbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
