@@ -4,40 +4,77 @@
     box-sizing: border-box;
 }
 
-.DomainCard {
-    background: white;
-    border-radius: 7px;
-    cursor: pointer;
-    box-shadow:
-        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.011),
-        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.016),
-        12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
-        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.024),
-        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.029),
-        100px 100px 80px rgba(0, 0, 0, 0.04);
-    padding: 12px;
+.flip-card-container {
+    perspective: 1000px;
     margin: 24px;
-    
+   
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+   
+}
+
+.flip-card-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.flip-card-front {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: space-around ;
 }
 
-.DomainCard h1 {
-    color: #162874;
-    text-align: center;
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    gap: 12px;
+}
+
+.flip-card-back {
+    background-color: #fff;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.flip-card-front h1 {
     font-size: 28px;
-    text-transform: uppercase;
 }
 
-.DomainCard p {
+.flip-card-front img {
+    width: 300px;
+}
+
+.flip-card-back p {
+    margin: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
     color: #333;
-    margin-top: 12px;
-    font-size: 18px;
 }
 
-.DomainCard img {
-    margin-top: 12px;
+@media screen and (max-width: 500px) {
+    .flip-card-container {
+        perspective: 1000px;
+        /* margin-top: 8px; */
+    }
 }

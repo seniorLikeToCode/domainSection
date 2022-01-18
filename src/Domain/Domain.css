@@ -2,20 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 .domainSection {
-    background-color: rgba(17, 163, 221, 0.1);
+    background: rgba(17, 163, 221, 0.1);
 }
 
 .domainSection h1 {
     text-align: center;
-    font-size: 64px;
+    font-size: 56px;
     color: #333;
     text-transform: uppercase;
 }
 
-.cardbox {
+.cardBox {
+    margin: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px;
+
+}
+
+/* for mobile devices */
+@media screen and (max-width: 500px) {
+    .cardBox {
+        display: grid;
+        grid-template-columns: 420px;
+        grid-template-rows: repeat(6, 450px);
+        justify-content: center;
+        align-content: center;
+    }
 }
