@@ -53,11 +53,13 @@ function Domain() {
         "Maching learning is an application of Artificial Intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it to learn for themselves.",
     },
   ];
+  
+  
 
   return (
     <div className="domainSection">
       <h1>Domain</h1>
-      <div className="cardBox">
+      <div className="cardBox" >
         {CardData.map((card) => {
           return <Card data={card} key={card.id} />;
         })}
